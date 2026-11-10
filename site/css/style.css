@@ -1,0 +1,150 @@
+/* ATHAR – white & copper-gold theme (colors taken from the bottle label) */
+:root {
+  --white: #FFFFFF;
+  --ivory: #FAF7F2;
+  --cream: #F4EEE4;
+  --gold: #A8743A;
+  --gold-dark: #7E5426;
+  --gold-light: #D9B98C;
+  --ink: #1C1A17;
+  --muted: #6F6A60;
+  --line: #EADFCD;
+  --radius: 6px;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+  --calli: "Aref Ruqaa", "Tajawal", serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+/* Top bar */
+.topbar {
+  background: var(--gold);
+  color: var(--white);
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: .5px;
+  padding: 8px 16px;
+}
+
+/* Logo (text-based, same style as the bottle label) */
+.logo { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; color: var(--gold); }
+.logo__ar { font-family: var(--calli); font-size: 34px; font-weight: 700; }
+.logo__divider {
+  display: flex; align-items: center; gap: 6px; width: 76px; margin: 6px 0 5px;
+}
+.logo__divider::before, .logo__divider::after { content: ""; flex: 1; height: 1px; background: currentColor; }
+.logo__divider i { width: 5px; height: 5px; background: currentColor; transform: rotate(45deg); }
+.logo__en { font-family: var(--serif); font-size: 13px; letter-spacing: 5px; padding-inline-start: 5px; }
+.logo--light { color: var(--gold-light); }
+
+/* Header */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 10;
+}
+.header__inner { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 16px; }
+.nav { display: flex; gap: 28px; font-size: 15px; }
+.nav a { position: relative; padding: 4px 0; }
+.nav a::after {
+  content: ""; position: absolute; inset-inline-start: 0; bottom: 0;
+  width: 0; height: 1px; background: var(--gold); transition: width .25s;
+}
+.nav a:hover::after { width: 100%; }
+.lang-btn {
+  background: transparent; border: 1px solid var(--gold); color: var(--gold-dark);
+  font-family: var(--sans); font-size: 14px; padding: 6px 16px; border-radius: 999px; cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.lang-btn:hover { background: var(--gold); color: var(--white); }
+
+/* Hero */
+.hero {
+  text-align: center; padding: 72px 0 60px;
+  background:
+    radial-gradient(ellipse at top, rgba(217, 185, 140, .25), transparent 60%),
+    linear-gradient(180deg, var(--white), var(--ivory));
+}
+.hero__eyebrow { font-family: var(--serif); letter-spacing: 6px; color: var(--gold); font-size: 14px; margin-bottom: 12px; }
+.hero__title { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 6vw, 56px); line-height: 1.2; }
+html[lang="ar"] .hero__title { font-family: var(--sans); }
+.hero__text { color: var(--muted); max-width: 520px; margin: 14px auto 0; font-size: 16px; }
+.hero__line { display: block; width: 60px; height: 1px; background: var(--gold); margin: 28px auto 0; }
+
+/* Toolbar */
+.toolbar {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  padding: 40px 0 20px; border-bottom: 1px solid var(--line); margin-bottom: 28px;
+}
+.section-title { font-family: var(--serif); font-weight: 500; font-size: 30px; }
+html[lang="ar"] .section-title { font-family: var(--sans); font-size: 24px; }
+.toolbar__right { display: flex; align-items: center; gap: 14px; }
+.count { color: var(--muted); font-size: 14px; }
+.sort {
+  font-family: var(--sans); font-size: 14px; color: var(--ink);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 8px 12px; cursor: pointer;
+}
+.sort:focus { outline: 1px solid var(--gold); }
+
+/* Product grid */
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-bottom: 72px; }
+.card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: box-shadow .3s, transform .3s;
+}
+.card:hover { box-shadow: 0 14px 34px rgba(126, 84, 38, .14); transform: translateY(-4px); }
+.card__media { aspect-ratio: 4 / 5; background: var(--white); overflow: hidden; }
+.card__media img { width: 100%; height: 100%; object-fit: contain; transition: transform .6s; }
+.card:hover .card__media img { transform: scale(1.05); }
+.card__body {
+  padding: 14px 16px 20px; text-align: center; display: flex; flex-direction: column; gap: 4px; flex: 1;
+  border-top: 1px solid var(--line);
+}
+.card__type { font-size: 12px; color: var(--muted); letter-spacing: .5px; }
+.card__name { font-family: var(--serif); font-weight: 600; font-size: 26px; letter-spacing: 1px; }
+.card__price { font-size: 17px; font-weight: 500; color: var(--gold-dark); margin-top: auto; }
+.card__price s { color: var(--muted); font-weight: 300; font-size: 14px; margin-inline-end: 8px; }
+.btn {
+  display: inline-block; margin-top: 10px; padding: 10px 14px;
+  background: var(--gold); color: var(--white); border-radius: var(--radius);
+  font-size: 14px; letter-spacing: .5px; transition: background .2s;
+}
+.btn:hover { background: var(--gold-dark); }
+
+/* About */
+.about { background: var(--white); border-top: 1px solid var(--line); padding: 60px 0; text-align: center; }
+.about__inner { max-width: 680px; }
+.about p { color: var(--muted); margin-top: 14px; }
+
+/* Footer */
+.footer { background: var(--ink); color: var(--cream); padding: 40px 0; text-align: center; }
+.footer__inner { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.footer__links { display: flex; gap: 20px; font-size: 14px; }
+.footer__links a:hover { color: var(--gold-light); }
+.footer__copy { font-size: 12px; color: #A89F8E; }
+
+/* Tablet & phone */
+@media (max-width: 960px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .nav { display: none; }
+  .header__inner { height: 72px; }
+  .logo__ar { font-size: 28px; }
+  .card__name { font-size: 21px; }
+  .card__body { padding: 12px 10px 16px; }
+  .hero { padding: 52px 0 44px; }
+}

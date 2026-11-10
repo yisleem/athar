@@ -3,65 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أثر | ATHAR Parfum</title>
+  <title>أثر | ATHAR Eau de Parfum</title>
+  <meta name="description" content="ATHAR – Eau de Parfum collection">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23A8743A'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='34' fill='white' font-family='serif'%3E%D8%A3%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cormorant+Garamond:wght@400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header>
-    <h1>أثر</h1>
-    <nav>
-      <a href="#collection">المجموعة</a>
-      <a href="#about">عن أثر</a>
-    </nav>
+  <div class="topbar" data-i18n="topbar">عطور فاخرة · اطلب عبر واتساب</div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="ATHAR">
+        <span class="logo__ar">أثر</span>
+        <span class="logo__divider"><i></i></span>
+        <span class="logo__en">ATHAR</span>
+      </a>
+      <nav class="nav">
+        <a href="#collection" data-i18n="navCollection">المجموعة</a>
+        <a href="#about" data-i18n="navAbout">عن أثر</a>
+      </nav>
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">EN</button>
+    </div>
   </header>
 
-  <section>
-    <p>EAU DE PARFUM</p>
-    <h2>عطرٌ يترك أثراً</h2>
-    <p>مجموعة مختارة من العطور الفاخرة، صُنعت لتبقى في الذاكرة.</p>
+  <section class="hero">
+    <div class="container">
+      <p class="hero__eyebrow">EAU DE PARFUM</p>
+      <h1 class="hero__title" data-i18n="heroTitle">عطرٌ يترك أثراً</h1>
+      <p class="hero__text" data-i18n="heroText">مجموعة مختارة من العطور الفاخرة، صُنعت لتبقى في الذاكرة.</p>
+      <span class="hero__line"></span>
+    </div>
   </section>
 
-  <main id="collection">
-    <h2>مجموعة العطور</h2>
+  <main class="container" id="collection">
+    <div class="toolbar">
+      <h2 class="section-title" data-i18n="collectionTitle">مجموعة العطور</h2>
+      <div class="toolbar__right">
+        <span class="count" id="count"></span>
+        <select id="sort" class="sort" aria-label="Sort">
+          <option value="default" data-i18n="sortDefault">الترتيب الافتراضي</option>
+          <option value="low" data-i18n="sortLow">السعر: من الأقل</option>
+          <option value="high" data-i18n="sortHigh">السعر: من الأعلى</option>
+          <option value="name" data-i18n="sortName">الاسم</option>
+        </select>
+      </div>
+    </div>
 
-    <article>
-      <img src="photos/athar-vumo.jpg" alt="V.Umo">
-      <h3>V.Umo</h3>
-      <p>50 مل</p>
-      <p>150 ر.س</p>
-    </article>
-
-    <article>
-      <img src="photos/athar-coko.jpg" alt="Coko">
-      <h3>Coko</h3>
-      <p>50 مل</p>
-      <p>150 ر.س</p>
-    </article>
-
-    <article>
-      <img src="photos/athar-allura.jpg" alt="Alure">
-      <h3>Alure</h3>
-      <p>50 مل</p>
-      <p>150 ر.س</p>
-    </article>
-
-    <article>
-      <img src="photos/athar-escand.jpg" alt="Escanda">
-      <h3>Escanda</h3>
-      <p>50 مل</p>
-      <p>150 ر.س</p>
-    </article>
-
+    <div class="grid" id="grid"></div>
   </main>
 
-  <section id="about">
-    <h2>عن أثر</h2>
-    <p>أثر علامة عطور تُعبّأ بعناية من أجود أنواع العطور المستوحاة.</p>
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <h2 class="section-title" data-i18n="aboutTitle">عن أثر</h2>
+      <p data-i18n="aboutText">أثر علامة عطور تُعبّأ بعناية من أجود أنواع العطور المستوحاة.</p>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2026 ATHAR</p>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo logo--light">
+        <span class="logo__ar">أثر</span>
+        <span class="logo__divider"><i></i></span>
+        <span class="logo__en">ATHAR</span>
+      </span>
+      <div class="footer__links" id="footerLinks"></div>
+      <p class="footer__copy">© <span id="year"></span> ATHAR · <span data-i18n="rights">جميع الحقوق محفوظة</span></p>
+    </div>
   </footer>
 
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
