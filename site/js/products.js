@@ -14,10 +14,10 @@ const STORE = {
 };
 
 const PRODUCTS = [
-  { name: "V.Umo",  image: "photos/athar-vumo.jpg",   price: 150, oldPrice: null, size: "50 ml" },
-  { name: "Coko",   image: "photos/athar-coko.jpg",   price: 150, oldPrice: null, size: "50 ml" },
-  { name: "Allura", image: "photos/athar-allura.jpg", price: 150, oldPrice: null, size: "50 ml" },
-  { name: "Escand", image: "photos/athar-escand.jpg", price: 150, oldPrice: null, size: "50 ml" }
+  { name: "V.Umo",  image: "photos/athar-vumo.jpg",   price: 50, oldPrice: null, size: "50 ml" },
+  { name: "Coko",   image: "photos/athar-coko.jpg",   price: 50, oldPrice: null, size: "50 ml" },
+  { name: "Allura", image: "photos/athar-allura.jpg", price: 50, oldPrice: null, size: "50 ml" },
+  { name: "Escand", image: "photos/athar-escand.jpg", price: 50, oldPrice: null, size: "50 ml" }
 ];
 
 /*
